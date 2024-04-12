@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   get 'about', to: 'about#index'
+  root to: 'main#index'
 end
