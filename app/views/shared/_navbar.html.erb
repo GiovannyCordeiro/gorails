@@ -8,3 +8,15 @@
     </li>
   </ul>
 </nav>
+
+<ul>
+  <% if Current.user %>
+    <p>
+      Logged in: <%= Current.user.email %>
+    </p>
+    <%= button_to 'Logout', logout_path, method: :delete %>
+  <% else %>
+    <%= button_to 'Sign In', sign_in_path %>
+    <%= button_to 'Login', sign_in_path %>
+  <% end %>
+</ul>
