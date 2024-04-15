@@ -1,4 +1,4 @@
-<h1>Sign Up</h1>
+<h1>Edit password</h1>
 
 <% if Current.user.errors.any? %>
   <% Current.user.errors.full_messages.each do |message| %>
@@ -8,12 +8,10 @@
   <% end %>
 <% end %>
 
-<%= form_with model: @user, url: sign_up_path, data: {turbo: false} do |form| %>
-  <%= form.label :email%>
-  <%= form.text_field :email %>
+<%= form_with model: Current.user, url: edit_password_path, data: {turbo: false} do |form| %>
   <%= form.label :password %>
   <%= form.password_field :password %>
   <%= form.label :password_confirmation%>
   <%= form.password_field :password_confirmation %>
-  <%= form.submit 'Sign Up' %>
+  <%= form.submit 'Update password!' %>
 <% end %>

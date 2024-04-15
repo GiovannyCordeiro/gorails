@@ -12,7 +12,7 @@
 <ul>
   <% if Current.user %>
     <p>
-      Logged in: <%= Current.user.email %>
+      Logged in: <%= link_to Current.user.email, edit_password_path %>
     </p>
     <%= button_to 'Logout', logout_path, method: :delete %>
   <% else %>
