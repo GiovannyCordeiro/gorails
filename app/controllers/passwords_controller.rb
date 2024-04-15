@@ -2,9 +2,7 @@ class PasswordsController < ApplicationController
 
   before_action :require_user_logged_id
 
-  def edit
-
-  end
+  def edit; end
 
   def update
     if Current.user.update(password_params)
