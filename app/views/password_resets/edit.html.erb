@@ -1,0 +1,12 @@
+<h1>Reset your password</h1>
+
+<%= form_with model: @user, url: password_reset_path(token: params[:token]), data: {turbo: false} do |form| %>
+  <%= form.label :password %>
+  <%= form.password_field :password, placeholder: 'new password' %>
+
+  <%= form.label :password_confirmation %>
+  <%= form.password_field :password_confirmation  'confirm new passsword' %>
+
+  <%= form.submit 'Reset password!'%>
+
+<% end %>
